@@ -3,7 +3,7 @@ import { Posts } from "@/components/Posts";
 import { Post } from "@/types/PostType";
 import { NextPage } from "next";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/db/fetchPosts`
   );
