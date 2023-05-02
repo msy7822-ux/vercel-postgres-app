@@ -1,9 +1,8 @@
 import React from "react";
-import { NextPage } from "next";
 import { Layout } from "@/components/Layout";
 import { useRouter } from "next/router";
 
-const CreatePage: NextPage = () => {
+const CreatePage = () => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const router = useRouter();
