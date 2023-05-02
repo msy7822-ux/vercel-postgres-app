@@ -15,7 +15,7 @@ const CreatePage = () => {
       body: JSON.stringify({ title, description }),
     });
 
-    router.replace("/");
+    // router.replace("/");
   };
 
   const handleOnChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
