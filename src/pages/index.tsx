@@ -3,7 +3,7 @@ import { Posts } from "@/components/Posts";
 import { Post } from "@/types/PostType";
 import { NextPage } from "next";
 
-export async function getStaticProps() {
+export const getServerSideProps = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/db/fetchPosts`
   );
@@ -12,9 +12,8 @@ export async function getStaticProps() {
   const posts = json.data;
   return {
     props: { posts },
-    revalidate: 10,
   };
-}
+};
 
 const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
   return (
