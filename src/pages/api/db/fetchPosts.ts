@@ -5,12 +5,11 @@ export default async function handler(
   _request: NextApiRequest,
   response: NextApiResponse
 ) {
-  let res = null;
   try {
-    res = await prisma.post.findMany();
+    const data = await prisma.post.findMany();
+
+    return response.status(200).json({ data });
   } catch (error) {
     return response.status(500).json({ error });
   }
-
-  return response.status(200).json({ res });
 }
